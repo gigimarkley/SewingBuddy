@@ -5,7 +5,8 @@ export default function Necklines() {
   return (
     <PageWrapper title="Necklines">
       <Text mb={2}>
-        This page explains different types of necklines with illustrations and sewing tips.
+        This page explains different types of necklines with illustrations and
+        sewing tips.
       </Text>
     </PageWrapper>
   );

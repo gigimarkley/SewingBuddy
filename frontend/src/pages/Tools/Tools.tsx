@@ -1,19 +1,14 @@
-import { Box, Grid, Heading, Text } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { Grid, Text } from '@chakra-ui/react';
 import PageWrapper from '../../components/PageWrapper';
+import Widget from '../../components/Widget';
+import { WidgetData } from '../../types';
 
-interface ToolWidget {
-  id: number;
-  title: string;
-  description: string;
-  path: string;
-}
-
-const widgets: ToolWidget[] = [
+const widgets: WidgetData[] = [
   {
     id: 1,
     title: 'Hand Sewing Needles',
-    description: 'Reference chart of hand sewing needles, eye shapes, and points',
+    description:
+      'Reference chart of hand sewing needles, eye shapes, and points',
     path: '/tools/hand-needles',
   },
   {
@@ -25,37 +20,26 @@ const widgets: ToolWidget[] = [
 ];
 
 export default function Tools() {
-  const navigate = useNavigate();
-
   return (
-    <PageWrapper title="Tools" showBackButton>
+    <PageWrapper title="Tools" showHeaderButtons>
       <Text mb={4}>
-        This page covers different types of tools, including hand tools, machine tools, and sewing accessories.
+        This page covers different types of tools, including hand tools, machine
+        tools, and sewing accessories.
       </Text>
 
-      <Grid templateColumns="repeat(auto-fit, minmax(200px, 1fr))" gap={{ base: 3, md: 4 }}>
+      <Grid
+        templateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+        gap={{ base: 3, md: 4 }}
+      >
         {widgets.map((widget) => (
-          <Box
+          <Widget
             key={widget.id}
-            p={{ base: 3, md: 4 }}
-            bg="brand.700"
-            color="white"
-            borderRadius="md"
-            boxShadow="sm"
-            textAlign="center"
-            _hover={{
-              boxShadow: 'md',
-              cursor: 'pointer',
-              transform: 'scale(1.02)',
-              transition: 'all 0.2s',
-            }}
-            onClick={() => navigate(widget.path)}
-          >
-            <Heading size="sm" mb={2}>
-              {widget.title}
-            </Heading>
-            <Text fontSize={{ base: 'sm', md: 'md' }}>{widget.description}</Text>
-          </Box>
+            title={widget.title}
+            description={widget.description}
+            path={widget.path}
+            bgColor="brand.400"
+            shadowColor="black"
+          />
         ))}
       </Grid>
     </PageWrapper>

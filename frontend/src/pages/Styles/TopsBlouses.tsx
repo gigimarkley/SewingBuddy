@@ -5,7 +5,8 @@ export default function TopsBlouses() {
   return (
     <PageWrapper title="TopsBlouses">
       <Text mb={2}>
-        This page covers different types of tops and blouses, including styles, measurements, and sewing tips.
+        This page covers different types of tops and blouses, including styles,
+        measurements, and sewing tips.
       </Text>
     </PageWrapper>
   );

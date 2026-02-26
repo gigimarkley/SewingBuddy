@@ -5,7 +5,8 @@ export default function Pants() {
   return (
     <PageWrapper title="Pants">
       <Text mb={2}>
-        This page covers different types of pants, including styles, measurements, and sewing tips.
+        This page covers different types of pants, including styles,
+        measurements, and sewing tips.
       </Text>
     </PageWrapper>
   );

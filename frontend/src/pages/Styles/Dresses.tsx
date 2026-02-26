@@ -5,7 +5,8 @@ export default function Dresses() {
   return (
     <PageWrapper title="Dresses">
       <Text mb={2}>
-        This page covers different types of dresses, including styles, measurements, and sewing tips.
+        This page covers different types of dresses, including styles,
+        measurements, and sewing tips.
       </Text>
     </PageWrapper>
   );

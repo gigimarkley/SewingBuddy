@@ -2,7 +2,7 @@ import { ChakraProvider, extendTheme, Box } from '@chakra-ui/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Yardage from './pages/Calculators/Yardage';
-import Calculators from './pages/Calculators/Calculators'; 
+import Calculators from './pages/Calculators/Calculators';
 import HandNeedles from './pages/Tools/HandNeedles';
 import MachineSewing from './pages/Tools/MachineSewing';
 import Necklines from './pages/Styles/Necklines';
@@ -52,7 +52,7 @@ export default function App() {
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
-        <Box minH="100vh" minW="100vw" >
+        <Box minH="100vh" minW="100vw">
           <Routes>
             <Route path="/" element={<HomePage />} />
 
@@ -64,30 +64,57 @@ export default function App() {
             <Route path="/tools/machine-sewing" element={<MachineSewing />} />
             <Route path="/tools/machine-needles" element={<MachineNeedles />} />
             <Route path="/tools/machine-feet" element={<MachineFeet />} />
-            <Route path="/tools/machine-stitch-length-width" element={<MachineStitchLengthWidth />} />
+            <Route
+              path="/tools/machine-stitch-length-width"
+              element={<MachineStitchLengthWidth />}
+            />
             <Route path="/tools/tension" element={<Tension />} />
             <Route path="/tools/bobbin" element={<Bobbin />} />
 
             {/* Materials widget routes */}
             <Route path="/materials" element={<Materials />} />
             <Route path="/materials/fabrics" element={<Fabrics />} />
-            <Route path="/materials/fabric-behavior" element={<FabricBehavior />} />
+            <Route
+              path="/materials/fabric-behavior"
+              element={<FabricBehavior />}
+            />
 
             {/* Calculators widget routes */}
             <Route path="/calculators" element={<Calculators />} />
             <Route path="/calculators/yardage" element={<Yardage />} />
             <Route path="/calculators/circle-skirt" element={<CircleSkirt />} />
-            <Route path="/calculators/unit-conversion" element={<UnitConverter />} />
-            <Route path="/calculators/thread-consumption" element={<ThreadConsumption />} />
-            <Route path="/calculators/pleated-tucks" element={<PleatsTucks />} />
+            <Route
+              path="/calculators/unit-conversion"
+              element={<UnitConverter />}
+            />
+            <Route
+              path="/calculators/thread-consumption"
+              element={<ThreadConsumption />}
+            />
+            <Route
+              path="/calculators/pleated-tucks"
+              element={<PleatsTucks />}
+            />
             <Route path="/calculators/binding-fabric" element={<Binding />} />
             <Route path="/calculators/trim-yardage" element={<TrimYardage />} />
-            <Route path="/calculators/buttonhole-spacing" element={<ButtonHoleSpacing />} />
+            <Route
+              path="/calculators/buttonhole-spacing"
+              element={<ButtonHoleSpacing />}
+            />
 
             {/* Stitches and techniques widget routes */}
-            <Route path="/stitches-techniques" element={<StitchesTechniques />} />
-            <Route path="/stitches-techniques/hand-stitches" element={<HandStitches />} />
-            <Route path="/stitches-techniques/machine-stitches" element={<MachineStitches />} />
+            <Route
+              path="/stitches-techniques"
+              element={<StitchesTechniques />}
+            />
+            <Route
+              path="/stitches-techniques/hand-stitches"
+              element={<HandStitches />}
+            />
+            <Route
+              path="/stitches-techniques/machine-stitches"
+              element={<MachineStitches />}
+            />
 
             {/* Garment style routes */}
             <Route path="/styles" element={<GarmentStyles />} />
@@ -97,7 +124,6 @@ export default function App() {
             <Route path="/styles/sleeves" element={<Sleeves />} />
             <Route path="/styles/pants" element={<Pants />} />
             <Route path="/styles/skirts" element={<Skirts />} />
-             
           </Routes>
         </Box>
       </BrowserRouter>

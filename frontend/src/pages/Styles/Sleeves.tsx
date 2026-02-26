@@ -5,7 +5,8 @@ export default function Sleeves() {
   return (
     <PageWrapper title="Sleeves">
       <Text mb={2}>
-        This page explains different types of sleeves and techniques for sewing them.
+        This page explains different types of sleeves and techniques for sewing
+        them.
       </Text>
     </PageWrapper>
   );

@@ -1,15 +1,9 @@
-import { Box, Grid, Heading, Text } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { Grid, Text } from '@chakra-ui/react';
 import PageWrapper from '../../components/PageWrapper';
+import Widget from '../../components/Widget';
+import { WidgetData } from '../../types';
 
-interface GarmentWidget {
-  id: number;
-  title: string;
-  description: string;
-  path: string; // route to navigate for details
-}
-
-const garmentWidgets: GarmentWidget[] = [
+const garmentWidgets: WidgetData[] = [
   {
     id: 1,
     title: 'Necklines',
@@ -49,37 +43,27 @@ const garmentWidgets: GarmentWidget[] = [
 ];
 
 export default function GarmentStyles() {
-  const navigate = useNavigate();
-
   return (
-    <PageWrapper title="Garment Styles" showBackButton>
+    <PageWrapper title="Garment Styles" showHeaderButtons>
       <Text mb={4}>
-        This page explores various garment styles, including dresses, tops, pants, and more. Click on each style to see detailed information, sewing tips, and examples.
+        This page explores various garment styles, including dresses, tops,
+        pants, and more. Click on each style to see detailed information, sewing
+        tips, and examples.
       </Text>
 
-      <Grid templateColumns="repeat(auto-fit, minmax(200px, 1fr))" gap={{ base: 3, md: 4 }}>
+      <Grid
+        templateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+        gap={{ base: 3, md: 4 }}
+      >
         {garmentWidgets.map((widget) => (
-          <Box
+          <Widget
             key={widget.id}
-            p={{ base: 3, md: 4 }}
-            bg="brand.800"
-            color="white"
-            borderRadius="md"
-            boxShadow="sm"
-            textAlign="center"
-            _hover={{
-              boxShadow: 'md',
-              cursor: 'pointer',
-              transform: 'scale(1.02)',
-              transition: 'all 0.2s',
-            }}
-            onClick={() => navigate(widget.path)}
-          >
-            <Heading size="sm" mb={2}>
-              {widget.title}
-            </Heading>
-            <Text fontSize={{ base: 'sm', md: 'md' }}>{widget.description}</Text>
-          </Box>
+            title={widget.title}
+            description={widget.description}
+            path={widget.path}
+            bgColor="brand.400"
+            shadowColor="black"
+          />
         ))}
       </Grid>
     </PageWrapper>
