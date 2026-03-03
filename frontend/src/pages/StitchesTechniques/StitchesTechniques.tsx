@@ -1,22 +1,7 @@
 import { Grid, Text } from '@chakra-ui/react';
 import PageWrapper from '../../components/PageWrapper';
 import Widget from '../../components/Widget';
-import { WidgetData } from '../../types';
-
-const widgets: WidgetData[] = [
-  {
-    id: 1,
-    title: 'Hand Stitches',
-    description: 'Running, backstitch, whipstitch, and more',
-    path: '/stitches-techniques/hand-stitches',
-  },
-  {
-    id: 2,
-    title: 'Machine Stitches',
-    description: 'Straight, zigzag, overlock, and decorative stitches',
-    path: '/stitches-techniques/machine-stitches',
-  },
-];
+import { stitchesTechniquesWidgets } from '../../data/widgets';
 
 export default function StitchesTechniques() {
   return (
@@ -30,7 +15,7 @@ export default function StitchesTechniques() {
         templateColumns="repeat(auto-fit, minmax(200px, 1fr))"
         gap={{ base: 3, md: 4 }}
       >
-        {widgets.map((widget) => (
+        {stitchesTechniquesWidgets.map((widget) => (
           <Widget
             key={widget.id}
             title={widget.title}

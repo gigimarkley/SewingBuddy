@@ -1,23 +1,7 @@
 import { Grid, Text } from '@chakra-ui/react';
 import PageWrapper from '../../components/PageWrapper';
 import Widget from '../../components/Widget';
-import { WidgetData } from '../../types';
-
-const widgets: WidgetData[] = [
-  {
-    id: 1,
-    title: 'Hand Sewing Needles',
-    description:
-      'Reference chart of hand sewing needles, eye shapes, and points',
-    path: '/tools/hand-needles',
-  },
-  {
-    id: 2,
-    title: 'Machine Sewing',
-    description: 'Needle charts, foot charts, and how-to guides for machines',
-    path: '/tools/machine-sewing',
-  },
-];
+import { toolsWidgets } from '../../data/widgets';
 
 export default function Tools() {
   return (
@@ -31,7 +15,7 @@ export default function Tools() {
         templateColumns="repeat(auto-fit, minmax(200px, 1fr))"
         gap={{ base: 3, md: 4 }}
       >
-        {widgets.map((widget) => (
+        {toolsWidgets.map((widget) => (
           <Widget
             key={widget.id}
             title={widget.title}

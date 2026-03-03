@@ -1,46 +1,7 @@
 import { Grid, Text } from '@chakra-ui/react';
 import PageWrapper from '../../components/PageWrapper';
 import Widget from '../../components/Widget';
-import { WidgetData } from '../../types';
-
-const garmentWidgets: WidgetData[] = [
-  {
-    id: 1,
-    title: 'Necklines',
-    description: 'Explore different types of necklines with illustrations.',
-    path: '/styles/necklines',
-  },
-  {
-    id: 2,
-    title: 'Sleeves',
-    description: 'Various sleeve styles and sewing techniques.',
-    path: '/styles/sleeves',
-  },
-  {
-    id: 3,
-    title: 'Pants',
-    description: 'Different pants styles and tips for sewing them.',
-    path: '/styles/pants',
-  },
-  {
-    id: 4,
-    title: 'Skirts',
-    description: 'Various skirt styles, pleats, and sewing methods.',
-    path: '/styles/skirts',
-  },
-  {
-    id: 5,
-    title: 'Tops & Blouses',
-    description: 'Common top styles including blouses and shirts.',
-    path: '/styles/tops-blouses',
-  },
-  {
-    id: 6,
-    title: 'Dresses',
-    description: 'Dress styles, including A-line, wrap, and sheath dresses.',
-    path: '/styles/dresses',
-  },
-];
+import { garmentWidgets } from '../../data/widgets';
 
 export default function GarmentStyles() {
   return (

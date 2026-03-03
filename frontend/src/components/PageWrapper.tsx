@@ -61,7 +61,11 @@ export default function PageWrapper({
 
       {/* Scrollable Content */}
       <Box pt={`${headerHeight}px`} px={{ base: 4, md: 6 }} pb={6}>
-        {title && <Heading mb={4}>{title}</Heading>}
+        {title && (
+          <Heading mb={4} textAlign="center">
+            {title}
+          </Heading>
+        )}{' '}
         {children}
       </Box>
     </Box>
